@@ -4,12 +4,15 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build tests",
+            "label": "Ecercism current test",
             "type": "shell",
-            "command": "./gradlew test --info",
+            "command": ".\\groovy\\hamming\\gradlew.bat -p .\\groovy\\hamming cleanTest test --info",
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "focus": true
             }
         },
         {
