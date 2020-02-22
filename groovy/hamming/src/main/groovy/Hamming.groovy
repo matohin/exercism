@@ -8,7 +8,7 @@ class Hamming {
 
         def transposedStrands = [ strand1.toList(), strand2.toList() ].transpose()
 
-        def comparisonResult = transposedStrands.collect{ it.unique().size() - 1 }
+        def comparisonResult = transposedStrands.collect { it.unique().size() - 1 }
 
         comparisonResult ? comparisonResult.sum() : 0
     }
