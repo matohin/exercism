@@ -12,5 +12,4 @@ class Hamming {
 
         comparisonResult ? comparisonResult.sum() : 0
     }
-
 }
