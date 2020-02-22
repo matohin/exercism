@@ -6,14 +6,11 @@ class Hamming {
             throw new ArithmeticException('Strings must be of an equal length')
         }
 
-        def comparisonResult = 0
+        def transposedStrands = [ strand1.toList(), strand2.toList() ].transpose()
 
-        strand1.eachWithIndex{
-            element, i ->
-            comparisonResult += (element == strand2[i]) ? 0 : 1
-        }
+        def comparisonResult = transposedStrands.collect{ it.unique().size() - 1 }
 
-        return comparisonResult
+        comparisonResult ? comparisonResult.sum() : 0
     }
 
 }
