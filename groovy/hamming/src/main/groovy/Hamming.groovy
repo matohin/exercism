@@ -1,18 +1,19 @@
 class Hamming {
 
     def distance(strand1, strand2) {
+
         if (strand1.length() != strand2.length()) {
             throw new ArithmeticException('Strings must be of an equal length')
         }
 
-        def comparisonResult = []
+        def comparisonResult = 0
 
-        for (def i = 0; i < strand1.length(); i++){
-            comparisonResult.add(strand1[i] == strand2[i])
+        strand1.eachWithIndex{
+            element, i ->
+            comparisonResult += (element == strand2[i]) ? 0 : 1
         }
 
-        return comparisonResult.count(false)
-
+        return comparisonResult
     }
 
 }
