@@ -10,6 +10,6 @@ class Hamming {
 
         def comparisonResult = transposedStrands.collect { it.unique().size() - 1 }
 
-        comparisonResult ? comparisonResult.sum() : 0
+        comparisonResult.count(1)
     }
 }
