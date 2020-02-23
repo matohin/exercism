@@ -6,7 +6,7 @@
         {
             "label": "Ecercism current test",
             "type": "shell",
-            "command": ".\\groovy\\hamming\\gradlew.bat -p .\\groovy\\hamming cleanTest test --info",
+            "command": ".\\groovy\\roman-numerals\\gradlew.bat -p .\\groovy\\roman-numerals cleanTest test --info",
             "group": {
                 "kind": "build",
                 "isDefault": true
