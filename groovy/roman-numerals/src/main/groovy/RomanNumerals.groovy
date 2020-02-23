@@ -16,13 +16,13 @@ class RomanNumerals {
                 def leftSideNumeralIndex = numeralsBeginingWithFive.contains(numeralSign) ? i + 1 : i + 2
                 def leftSideNumeralValue = romanNumerals.keySet()[leftSideNumeralIndex]
 
-                if ((intDivisionResult <= 3) && (intDivisionResult > 0)) {
+                if (intDivisionResult > 0 && intDivisionResult <= 3) {
 
                     romanRepresentation += numeralSign * intDivisionResult
                     arabicValueToRepresent = arabicValueToRepresent % numeralValue
                 }
 
-                else if (leftSideNumeralValue && ((arabicValueToRepresent + leftSideNumeralValue).intdiv(numeralValue)) == 1){
+                else if (leftSideNumeralValue && (arabicValueToRepresent + leftSideNumeralValue).intdiv(numeralValue) == 1){
 
                     romanRepresentation += romanNumerals[leftSideNumeralValue]
                     romanRepresentation += numeralSign
