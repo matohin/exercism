@@ -12,7 +12,6 @@ class RomanNumerals {
             romanNumerals.eachWithIndex {numeralValue, numeralSign, i ->
 
                 def intDivisionResult = arabicValueToRepresent.intdiv(numeralValue)
-                def remainder = arabicValueToRepresent % numeralValue
 
                 def leftSideNumeralIndex = numeralsBeginingWithFive.contains(numeralSign) ? (i + 1) : (i + 2)
 
@@ -24,7 +23,7 @@ class RomanNumerals {
 
                 if ((intDivisionResult <= 3) && (intDivisionResult > 0)) {
                     romanRepresentation += numeralSign * intDivisionResult
-                    arabicValueToRepresent = remainder
+                    arabicValueToRepresent = arabicValueToRepresent % numeralValue
                 }
 
                 else if (aaa == 1){
