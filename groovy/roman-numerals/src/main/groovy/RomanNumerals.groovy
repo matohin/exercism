@@ -13,22 +13,25 @@ class RomanNumerals {
 
                 def intDivisionResult = arabicValueToRepresent.intdiv(numeralValue)
 
-                def leftSideNumeralIndex = numeralsBeginingWithFive.contains(numeralSign) ? (i + 1) : (i + 2)
+                def leftSideNumeralIndex = numeralsBeginingWithFive.contains(numeralSign) ? i + 1 : i + 2
                 def leftSideNumeralValue = romanNumerals.keySet()[leftSideNumeralIndex]
 
                 if ((intDivisionResult <= 3) && (intDivisionResult > 0)) {
+
                     romanRepresentation += numeralSign * intDivisionResult
                     arabicValueToRepresent = arabicValueToRepresent % numeralValue
                 }
 
                 else if (leftSideNumeralValue && ((arabicValueToRepresent + leftSideNumeralValue).intdiv(numeralValue)) == 1){
-                    romanRepresentation += romanNumerals.values()[leftSideNumeralIndex]
+
+                    romanRepresentation += romanNumerals[leftSideNumeralValue]
                     romanRepresentation += numeralSign
 
                     arabicValueToRepresent -= numeralValue
-                    arabicValueToRepresent += romanNumerals.keySet()[leftSideNumeralIndex]
+                    arabicValueToRepresent += leftSideNumeralValue
                 }
             }
+
             return romanRepresentation
         }
     }
