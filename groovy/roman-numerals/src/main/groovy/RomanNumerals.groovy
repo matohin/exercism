@@ -14,19 +14,14 @@ class RomanNumerals {
                 def intDivisionResult = arabicValueToRepresent.intdiv(numeralValue)
 
                 def leftSideNumeralIndex = numeralsBeginingWithFive.contains(numeralSign) ? (i + 1) : (i + 2)
-
-                def aaa = 0
-                if (leftSideNumeralIndex < romanNumerals.size()){
-                    aaa = (arabicValueToRepresent + (romanNumerals.keySet()[leftSideNumeralIndex])).intdiv(numeralValue)
-                }
-
+                def leftSideNumeralValue = romanNumerals.keySet()[leftSideNumeralIndex]
 
                 if ((intDivisionResult <= 3) && (intDivisionResult > 0)) {
                     romanRepresentation += numeralSign * intDivisionResult
                     arabicValueToRepresent = arabicValueToRepresent % numeralValue
                 }
 
-                else if (aaa == 1){
+                else if (leftSideNumeralValue && ((arabicValueToRepresent + leftSideNumeralValue).intdiv(numeralValue)) == 1){
                     romanRepresentation += romanNumerals.values()[leftSideNumeralIndex]
                     romanRepresentation += numeralSign
 
