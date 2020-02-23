@@ -26,8 +26,8 @@ class RomanNumerals {
                     romanRepresentation += romanNumerals[leftSideNumeralValue]
                     romanRepresentation += numeralSign
 
-                    arabicValueToRepresent -= numeralValue
                     arabicValueToRepresent += leftSideNumeralValue
+                    arabicValueToRepresent -= numeralValue
                 }
             }
 
